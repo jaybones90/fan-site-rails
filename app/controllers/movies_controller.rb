@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @pop_movies = Movie.popular
     if (params[:filter] === "alpha")
       @movies = Movie.alpha
     elsif (params[:filter] === "date")

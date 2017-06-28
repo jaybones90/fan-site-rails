@@ -1,6 +1,6 @@
 <h1>List of all movies</h1>
 
-<%= link_to "Sort by Alphabetical", {:controller => "movies", :action => 'index', :filter => "alpha"} %>
+<%= link_to "Sort by Alphabetical", {:controller => "movies", :action => 'index', :filter => "alpha"} %> |
 <%= link_to "Sort by date created", {:controller => "movies", :action => 'index', :filter => "date" } %>
 
 <ul>
@@ -8,6 +8,19 @@
     <li><%= link_to movie.title, movie_path(movie)%></li>
   <%end%>
 </ul>
+
+<h1>Movie with the most reviews</h1>
+<% if @pop_movies != nil %>
+<ul>
+  <% @pop_movies.each do |movie|%>
+    <li><%=  movie.title %></li>
+  <%end%>
+</ul>
+<% else %>
+<p>  Aint shit ! </p>
+<% end %>
+
+
 
 
 <%= link_to 'Create New Movie', new_movie_path %>
