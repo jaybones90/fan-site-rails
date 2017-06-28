@@ -2,9 +2,18 @@
 
 
 <ul>
-  <% @movies.each do |movie|%>
+  <% @movies.order(:title).each do |movie|%>
+    <li><%= link_to movie.title, movie_path(movie)%></li>
+  <%end%>
+</ul>
+<h3>second list</h3>
+<ul>
+  <% @movies.order(:created_at).each do |movie|%>
     <li><%= link_to movie.title, movie_path(movie)%></li>
   <%end%>
 </ul>
 
 <%= link_to 'Create New Movie', new_movie_path%>
+
+
+<br>

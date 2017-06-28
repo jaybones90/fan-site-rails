@@ -1,0 +1,14 @@
+<%= render "layouts/errors", :object => @review %>
+
+
+<%= form_for [@movie, @review] do |f| %>
+  <%= f.label :title, "Review Title"%>
+  <%= f.text_field :title%>
+  <%= f.label :description, "Description"%>
+  <%= f.text_field :description%>
+  <%= f.label :author, "Author"%>
+  <%= f.text_field :author%>
+  <%= f.label :rating, "Rating"%>
+  <%= f.text_field :rating%>
+  <%= f.submit%>
+  <% end %>
