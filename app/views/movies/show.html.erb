@@ -1,5 +1,8 @@
 <h1><%=@movie.title%></h1>
-
+<%= link_to 'Edit This Movie', edit_movie_path(@movie)%>
+<%= link_to 'Delete This Movie', movie_path(@movie), :data => {
+  :confirm => "Are you sure?",
+  :method => 'delete'} %>
 
 
 <hr>
