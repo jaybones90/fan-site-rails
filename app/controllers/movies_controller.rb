@@ -2,7 +2,11 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-
+    if (params[:filter] === "alpha")
+      @movies = Movie.alpha
+    elsif (params[:filter] === "date")
+      @movies = Movie.date
+    end
   end
 
   def new
